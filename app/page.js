@@ -14,7 +14,8 @@ const getProducts = async () => {
 };
 
 export default async function Page() {
-  const {products} = await getProducts();
+  const data = await getProducts();
+  const products = data.products;
   return (
     <div>
       <HeroSection />
