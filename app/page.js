@@ -13,7 +13,7 @@ const getProducts = async () => {
   }
 };
 
-export default async function Home() {
+export default async function() {
   const {products} = await getProducts();
   return (
     <div>
