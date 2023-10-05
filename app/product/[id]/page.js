@@ -62,7 +62,7 @@ export default async function ({params}){
       <div className="flex justify-center">
         <div className=" wrapper flex max-md:justify-center max-md:px-2 flex-wrap gap-2 mt-2">
           {moreProducts?.map((product) => (
-            <ProductCard product={product} />
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
       </div>
