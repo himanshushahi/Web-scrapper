@@ -5,8 +5,8 @@ import EmailModal from "./EmailModal";
 function Notify({ id }) {
   const [isOpen, setIsOpen] = useState(false);
   const submitHandler = (id,email)=>{
-    alert(id)
-    alert(email)
+    // alert(id)
+    // alert(email)
   }
   return (
     <div className="mt-4 flex justify-center">

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import HeroSection from "./components/HeroSection";
 import ProductCard from "./components/ProductCard";
 import SearchComponent from "./components/SearchComponent";
@@ -8,7 +9,7 @@ const getProducts = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    alert("some error");
+    toast.error('Some Error with getting product')
   }
 };
 

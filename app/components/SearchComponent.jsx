@@ -3,6 +3,7 @@ import {  useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { FaSearch } from 'react-icons/fa';
 import Loader from './Loader';
+import toast from 'react-hot-toast';
 function SearchComponent() {
     const [url,setUrl] = useState('')
     const router = useRouter();
@@ -23,7 +24,7 @@ function SearchComponent() {
             router.push('/product/'+product._id)
           }
         } catch (error) {
-          alert(error.message);
+          toast.error(error.message)
         } finally{
           setIsLoading(false)
         }
