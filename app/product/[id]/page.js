@@ -13,7 +13,7 @@ const getBlog = async (id)=>{
     }
 }
 
-export default async function ({params}){
+export default async function Page({params}){
     const {id} = params;
     const {product,moreProducts} = await getBlog(id);
     return(
