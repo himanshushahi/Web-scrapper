@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { FaShoppingCart, FaAmazon,FaFacebook } from "react-icons/fa";
-// import scraperImage from './scraper-image.jpg';
+import { FaShoppingCart, FaAmazon, FaFacebook } from "react-icons/fa";
+import scrapperImage from '../../public/logo.jpeg'
 
 function HeroSection() {
   return (
@@ -25,17 +25,17 @@ function HeroSection() {
             </div>
           </div>
           <div className="max-md:px-4">
-          <button className="bg-yellow-500 transition-colors rounded max-md:w-full duration-200 hover:bg-yellow-400 text-gray-900 font-bold py-2 px-4 mt-8 flex justify-center items-center">
-            <FaShoppingCart className="text-xl mr-2" />
-            <span>Search Deal</span>
-          </button>
+            <button className="bg-yellow-500 transition-colors rounded max-md:w-full duration-200 hover:bg-yellow-400 text-gray-900 font-bold py-2 px-4 mt-8 flex justify-center items-center">
+              <FaShoppingCart className="text-xl mr-2" />
+              <span>Search Deal</span>
+            </button>
           </div>
         </div>
         <div className="basis-1/2 flex justify-end max-md:justify-center">
-          <img
-        //   height={500}
-        //   width={500}
-            src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRml0cznIYpozePkySu18dyCiuMhZ44TYqN1w&usqp=CAU`}
+          <Image
+            height={500}
+            width={500}
+            src={scrapperImage}
             alt="Product Scraper"
             className="w-[80%] h-[80%] rounded-md"
           />

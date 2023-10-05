@@ -1,5 +1,6 @@
 import Notify from "@/app/components/Notify";
 import ProductCard from "@/app/components/ProductCard";
+import Image from "next/image";
 import { FaArrowDown, FaArrowUp, FaPercent, FaRupeeSign } from "react-icons/fa";
 
 const getBlog = async (id)=>{
@@ -20,9 +21,11 @@ export default async function ({params}){
         <div className="flex justify-center py-10 bg-gray-100">
         <div className="flex max-md:gap-4 max-md:flex-col relative wrapper">
           <div className="basis-1/2 h-[300px] max-md:flex justify-center">
-            <img
+            <Image
               src={product.image}
               alt={product.image}
+              width={500}
+              height={500}
               className=" rounded-md h-full w-full"
             />
           </div>
