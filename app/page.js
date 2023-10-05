@@ -9,13 +9,12 @@ const getProducts = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.log('Some Error with getting product')
+    console.log(error)
   }
 };
 
 export default async function Page() {
-  const data = await getProducts();
-  const products = data.products;
+  const {products} = await getProducts();
   return (
     <div>
       <HeroSection />
