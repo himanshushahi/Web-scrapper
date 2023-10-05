@@ -9,7 +9,7 @@ const getProducts = async () => {
     const data = await response.json();
     return data;
   } catch (error) {
-    toast.error('Some Error with getting product')
+    console.log('Some Error with getting product')
   }
 };
 
