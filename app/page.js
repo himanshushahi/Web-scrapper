@@ -25,7 +25,7 @@ export default async function Page() {
       <SearchComponent />
       <div className="flex justify-center">
         <div className=" wrapper flex flex-wrap max-md:justify-center gap-2 mt-2">
-          {products?.map((product) => (
+          {products&&products.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
