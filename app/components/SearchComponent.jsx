@@ -19,6 +19,7 @@ function SearchComponent() {
             body: JSON.stringify({ url: validUrl }),
           });
           const { success, product } = await response.json();
+          console.log(product)
            setIsLoading(false)
           if (success) {
             router.push('/product/'+product._id)

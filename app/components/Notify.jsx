@@ -1,13 +1,37 @@
 "use client";
 import React, { useState } from "react";
 import EmailModal from "./EmailModal";
+import toast from "react-hot-toast";
 
 function Notify({ id }) {
   const [isOpen, setIsOpen] = useState(false);
-  const submitHandler = (id,email)=>{
-    // alert(id)
-    // alert(email)
-  }
+
+  const submitHandler = async (id, email) => {
+    if (!id || !email) {
+      toast.error("Enter Your Email To Proceed");
+      return;
+    }
+
+    try {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ productId: id, email: email }),
+      };
+      const response = await fetch("/api/subscribe", options);
+      const data = await response.json();
+      if (data.success) {
+        toast.success(data.message);
+        setIsOpen(false)
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="mt-4 flex justify-center">
       <button
@@ -16,7 +40,11 @@ function Notify({ id }) {
       >
         Notify Me
       </button>
-      <EmailModal isOpen={isOpen} onClose={()=>setIsOpen(false)} onSubmit={(email)=>submitHandler(id,email)}/>
+      <EmailModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        onSubmit={(email) => submitHandler(id, email)}
+      />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
 import Pagination from "./components/Pagination";
 import ProductCard from "./components/ProductCard";
@@ -32,8 +31,7 @@ export default async function Page({_,searchParams}) {
             ))}
         </div>
       </div>
-      <Pagination length={products.length} documentCount={count}/>
-      <Footer/>
+      <Pagination documentCount={count}/>
     </div>
   );
 }

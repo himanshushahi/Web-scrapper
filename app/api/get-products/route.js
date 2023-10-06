@@ -11,7 +11,7 @@ export async function GET(req) {
     connectdb(); // Assuming this function sets up your database connection
 
     const products = await ProductModel.find()
-      .select("title currentPrice image")
+      .select("title currentPrice image provider")
       .skip(skip)
       .limit(limit);
 

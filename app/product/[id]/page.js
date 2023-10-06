@@ -31,8 +31,8 @@ export default async function Page({ params }) {
             />
           </div>
           <div className="basis-1/2 px-4 ">
-            <h2>{product.title}</h2>
-            {product.description && <p>{product.description}</p>}
+            <h2 className="text-blue-500 mb-2">{product.title}</h2>
+            {product.description && <p>{product.description.length>120?product.description.slice(0,120)+'...':product.description}</p>}
             <div className="grid md:grid-cols-2 gap-2 mt-2">
               <div className="bg-gray-200 rounded-md px-2 py-3 flex gap-1 items-center">
                 <FaRupeeSign className="text-green-600" />{" "}
