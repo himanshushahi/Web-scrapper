@@ -7,7 +7,7 @@
 }
 
 .wrapper {
-  @apply sm:w-[100%] md:w-[80%] lg:w-[70%];
+  @apply sm:w-[100%] md:w-[80%] lg:w-[75%];
 }
 
 .shadow {

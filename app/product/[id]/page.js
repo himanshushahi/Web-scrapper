@@ -62,7 +62,7 @@ export default async function Page({ params }) {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className=" wrapper flex max-md:justify-center max-md:px-2 flex-wrap gap-2 mt-2">
+        <div className=" wrapper flex max-md:justify-center max-md:px-2 flex-wrap mt-2">
           {moreProducts?.map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
