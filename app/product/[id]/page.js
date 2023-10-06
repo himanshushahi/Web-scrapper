@@ -3,22 +3,23 @@ import ProductCard from "@/app/components/ProductCard";
 import Image from "next/image";
 import { FaArrowDown, FaArrowUp, FaPercent, FaRupeeSign } from "react-icons/fa";
 
-const getBlog = async (id)=>{
-    try {
-        const response = await fetch(process.env.DOMAIN_URL+"/api/get-products/"+id);
-        const data = await response.json();
-        return data
-    } catch (error) {
-        console.log(error.message)
-    }
+async function getBlog(id) {
+  try {
+    const response = await fetch(
+      process.env.DOMAIN_URL + "/api/get-products/" + id
+    );
+    return response.json();
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 
-export default async function Page({params}){
-    const {id} = params;
-    const {product,moreProducts} = await getBlog(id);
-    return(
-        <div>
-        <div className="flex justify-center py-10 bg-gray-100">
+export default async function Page({ params }) {
+  const { id } = params;
+  const { product, moreProducts } = await getBlog(id);
+  return (
+    <div>
+      <div className="flex justify-center py-10 bg-gray-100">
         <div className="flex max-md:gap-4 max-md:flex-col relative wrapper">
           <div className="basis-1/2 h-[300px] max-md:flex justify-center">
             <Image
@@ -34,7 +35,8 @@ export default async function Page({params}){
             {product.description && <p>{product.description}</p>}
             <div className="grid md:grid-cols-2 gap-2 mt-2">
               <div className="bg-gray-200 rounded-md px-2 py-3 flex gap-1 items-center">
-                <FaRupeeSign className="text-green-600" /> {product.currentPrice}
+                <FaRupeeSign className="text-green-600" />{" "}
+                {product.currentPrice}
               </div>
               <div className="bg-gray-200 rounded-md px-2 py-3 flex gap-1 items-center">
                 <FaArrowDown className="text-green-600" /> {product.lowestPrice}
@@ -55,7 +57,7 @@ export default async function Page({params}){
                 Buy
               </a>
             </div>
-            <Notify id={product._id}/>
+            <Notify id={product._id} />
           </div>
         </div>
       </div>
@@ -66,6 +68,6 @@ export default async function Page({params}){
           ))}
         </div>
       </div>
-      </div>
-    )
+    </div>
+  );
 }

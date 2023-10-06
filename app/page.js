@@ -2,18 +2,19 @@ import HeroSection from "./components/HeroSection";
 import ProductCard from "./components/ProductCard";
 import SearchComponent from "./components/SearchComponent";
 
-const getProducts = async () => {
+async function getProducts() {
   try {
-    const response = await fetch(process.env.DOMAIN_URL+"/api/get-products",{method:'GET'});
-    const data = await response.json();
-    return data;
+    const response = await fetch(process.env.DOMAIN_URL + "/api/get-products", {
+      method: "GET",
+    });
+    return response.json();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-};
+}
 
 export default async function Page() {
-  const {products} = await getProducts();
+  const { products } = await getProducts();
   return (
     <div>
       <HeroSection />
