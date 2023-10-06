@@ -7,7 +7,11 @@ async function getProducts() {
     const response = await fetch(process.env.DOMAIN_URL + "/api/get-products", {
       method: "GET",
     });
-    return response.json();
+    if(response.ok){
+      return response.json();
+    }else{
+      return {products:{}}
+    }
   } catch (error) {
     console.log(error);
   }

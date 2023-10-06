@@ -6,7 +6,7 @@ export async function GET(){
     try {
         connectdb()
         const products = await ProductModel.find().select('title currentPrice image');
-        return NextResponse.json({products},{status:200})
+        return NextResponse.json({products:products},{status:200})
       } catch (error) {
         return NextResponse.json({
           products:[]
