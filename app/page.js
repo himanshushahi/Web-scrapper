@@ -10,7 +10,7 @@ async function getProducts() {
     if(response.ok){
       return response.json();
     }else{
-      return {products:{}}
+      return {products:[]}
     }
   } catch (error) {
     console.log(error);
