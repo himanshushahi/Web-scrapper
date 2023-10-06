@@ -1,11 +1,10 @@
-import toast from "react-hot-toast";
 import HeroSection from "./components/HeroSection";
 import ProductCard from "./components/ProductCard";
 import SearchComponent from "./components/SearchComponent";
 
 const getProducts = async () => {
   try {
-    const response = await fetch(process.env.DOMAIN_URL+"/api/get-products");
+    const response = await fetch(process.env.DOMAIN_URL+"/api/get-products",{method:'GET'});
     const data = await response.json();
     return data;
   } catch (error) {
