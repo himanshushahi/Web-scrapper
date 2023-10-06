@@ -1,10 +1,12 @@
+import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
+import Pagination from "./components/Pagination";
 import ProductCard from "./components/ProductCard";
 import SearchComponent from "./components/SearchComponent";
 
-async function getProducts() {
+async function getProducts(page) {
   try {
-    const response = await fetch(process.env.DOMAIN_URL + "/api/get-products");
+    const response = await fetch(`${process.env.DOMAIN_URL}/api/get-products?page=${page}`,{next:{revalidate:300}});
 
     if (response.ok) {
       return response.json();
@@ -16,8 +18,8 @@ async function getProducts() {
   }
 }
 
-export default async function Page() {
-  const { products } = await getProducts();
+export default async function Page({_,searchParams}) {
+  const { products,count } = await getProducts(searchParams.page);
   return (
     <div>
       <HeroSection />
@@ -30,6 +32,8 @@ export default async function Page() {
             ))}
         </div>
       </div>
+      <Pagination length={products.length} documentCount={count}/>
+      <Footer/>
     </div>
   );
 }

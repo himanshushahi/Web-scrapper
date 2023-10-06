@@ -7,7 +7,7 @@ async function getBlog(id) {
   try {
     const response = await fetch(
       process.env.DOMAIN_URL + "/api/get-products/" + id
-    );
+   ,{next:{revalidate:300}} );
     return response.json();
   } catch (error) {
     console.log(error.message);

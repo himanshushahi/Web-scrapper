@@ -1,7 +1,6 @@
 import axios from "axios";
 import cheerio from "cheerio";
 import ProductModel from "../DB/model/ProductModel";
-import { NextResponse } from "next/server";
 import connectdb from "../DB/connetdb";
 
 const amazonTitle = "#productTitle";
@@ -40,7 +39,7 @@ const getData = async (url) => {
             heighestPrice,
             lowestPrice,
             discount,
-            provider: "Amazon",
+            provider: url.includes('www.amazon.in')?'Amazon':'Flipkart',
           },
           { new: true }
         ).select("_id");
@@ -57,7 +56,7 @@ const getData = async (url) => {
           image: imageUrl,
           description: bulletsPoints,
           discount,
-          provider: "Amazon",
+          provider: url.includes('www.amazon.in')?'Amazon':'Flipkart',
         });
         return { success: true, product: { _id: product._id }}
       }

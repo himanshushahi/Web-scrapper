@@ -23,8 +23,8 @@ function Navbar() {
           </li>
         </ul>
         <div className="flex basis-1/3 justify-end gap-2">
-          <button className="btn">Login</button>
-          <button className="btn">Signup</button>
+          {/* <button className="btn">Login</button>
+          <button className="btn">Signup</button> */}
         </div>
       </nav>
     </div>
