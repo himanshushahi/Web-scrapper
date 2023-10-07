@@ -1,13 +1,14 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8 mt-4">
-      <div className="wrapper mx-auto flex justify-between items-center">
+      <div className="wrapper mx-auto max-md:flex-col max-md:gap-4 flex justify-between items-center">
         <div className="flex-1 text-xl">Product Scraper</div>
         <div className="flex-1 flex justify-center gap-4">
-          <a href="#">Home</a>
+          <Link href="/">Home</Link>
           <a href="#">Products</a>
           <a href="#">About Us</a>
           <a href="#">Contact Us</a>

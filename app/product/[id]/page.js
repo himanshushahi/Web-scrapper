@@ -27,7 +27,7 @@ export default async function Page({ params }) {
               alt={product.image}
               width={500}
               height={500}
-              className=" rounded-md h-full w-full"
+              className=" rounded-md object-contain h-full w-full"
             />
           </div>
           <div className="basis-1/2 px-4 ">

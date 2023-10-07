@@ -4,7 +4,7 @@ import React from "react";
 
 function ProductCard({ product }) {
   return (
-    <div key={product._id} className="basis-1/3 rounded bg-gray-100 overflow-hidden shadow-lg">
+    <div key={product._id} className="basis-1/3 max-md:basis-full rounded bg-gray-100 overflow-hidden shadow-lg">
       <Image className="w-full h-80" src={product.image} alt={product.title} width={500} height={500} />
       <div className="px-6 py-4">
         <div className="font-bold text-base mb-2">{product.title.length>80?product.title.slice(0,80)+'...':product.title}</div>
