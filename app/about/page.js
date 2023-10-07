@@ -15,7 +15,7 @@ const Page = () => {
           At PriceScraper, our team of dedicated web scrapers works tirelessly
           to collect and update data from Amazon and Flipkart, ensuring that you
           always have access to the latest prices, discounts, and special
-          offers. We're committed to helping you save both time and money when
+          offers. We&apos;re committed to helping you save both time and money when
           shopping online.
         </p>
         <p className="mb-4">Key Features of PriceScraper:</p>
