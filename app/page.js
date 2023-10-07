@@ -23,14 +23,14 @@ export default async function Page({_,searchParams}) {
     <div>
       <HeroSection />
       <SearchComponent />
-      <div className="flex justify-center">
+      <section className="flex justify-center" >
         <div className=" wrapper flex flex-wrap max-md:justify-center mt-2">
           {products &&
             products.map((product) => (
               <ProductCard key={product._id} product={product} />
             ))}
         </div>
-      </div>
+      </section>
       <Pagination documentCount={count}/>
     </div>
   );

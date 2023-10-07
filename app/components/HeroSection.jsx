@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { FaShoppingCart, FaAmazon, FaFacebook } from "react-icons/fa";
-import scrapperImage from '../../public/logo.jpeg'
+import scrapperImage from '../../public/scrapper.jpeg'
 
 function HeroSection() {
   return (
@@ -31,7 +31,7 @@ function HeroSection() {
             </button>
           </div>
         </div>
-        <div className="basis-1/2 flex justify-end max-md:justify-center">
+        <div className="basis-1/2 max-md:basis-full flex justify-end max-md:justify-center">
           <Image
             height={500}
             width={500}

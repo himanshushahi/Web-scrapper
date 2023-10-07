@@ -24,3 +24,7 @@
   background: rgb(85, 85, 205);
   border-radius: 9999px;
 }
+
+.shadow-custom{
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}

@@ -8,6 +8,9 @@ const nextConfig = {
       },{
         protocol: "https",
         hostname: "rukminim2.flixcart.com",
+      },{
+        protocol: "https",
+        hostname: "i.pinimg.com",
       },
     ],
   },

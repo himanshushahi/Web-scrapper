@@ -31,7 +31,7 @@ function SearchComponent() {
         }
       };
   return (
-    <div className=" bg-blue-500 flex justify-center">
+    <div className=" bg-blue-500 flex justify-center" id="product-section">
     <div className="flex wrapper justify-center w-1/2 max-md:w-full max-md:px-2 items-center h-20">
       <input
         type="text"
