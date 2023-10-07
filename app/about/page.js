@@ -1,10 +1,8 @@
-import React from "react";
-
-const Page = () => {
+export default function Page(){
   return (
-    <div className="flex justify-center my-20">
-      <div className="wrapper">
-        <h1 className="text-3xl font-bold mb-4">About Us</h1>
+    <div className="flex justify-center my-10 md:my-20">
+      <div className="wrapper max-md:px-2">
+        <h1 className="text-3xl font-bold mb-4 text-blue-500 max-sm:text-center">About Us</h1>
         <p className="mb-4">
           Welcome to PriceScraper, your reliable source for real-time price
           tracking of products on Amazon and Flipkart. Our mission is to empower
@@ -47,4 +45,9 @@ const Page = () => {
   );
 };
 
-export default Page;
+
+
+export const metadata = {
+  title: "About PriceTrackerHub - Your Ultimate Amazon and Flipkart Price Tracking Solution",
+  description: "Welcome to PriceTrackerHub, your one-stop destination for effortlessly monitoring and comparing prices of Amazon and Flipkart products. Never miss a deal again as our intuitive platform helps you stay updated on price drops, discounts, and special offers, ensuring you always get the best value for your money. Start tracking prices today and make smarter shopping decisions with PriceTrackerHub!",
+};

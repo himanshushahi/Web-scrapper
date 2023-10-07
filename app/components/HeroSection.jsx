@@ -37,7 +37,7 @@ function HeroSection() {
             width={500}
             src={scrapperImage}
             alt="Product Scraper"
-            className="w-[80%] h-[80%] rounded-md"
+            className="w-[80%] h-[80%] max-md:h-full max-md:w-full rounded-md"
           />
         </div>
       </div>

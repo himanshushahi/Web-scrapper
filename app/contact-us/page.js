@@ -1,36 +1,18 @@
-'use client'
-import React ,{useState} from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import ContactForm from "../components/ContactForm";
 
 const Page = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: "",
-      });
-    
-      const handleChange = (e) => {
-        setFormData({
-          ...formData,
-          [e.target.name]: e.target.value,
-        });
-      };
-    
-      const onSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData)
-      };
   return (
     <div className="flex justify-center py-14">
-      <div className="wrapper max-md:px-2">
-        <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-        <p className="mb-4">
+      <div className="wrapper max-md:px-4">
+        <h1 className="text-3xl font-bold mb-4 text-center text-blue-500">Contact Us</h1>
+        <p className="mb-4 md:text-center text-justify">
           Have a question or feedback for us? We&apos;d love to hear from you! Feel
           free to get in touch using any of the following methods:
         </p>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-2 ">
         <div className="flex items-start flex-col bg-gray-300 rounded-md p-2">
-          <h2 className="text-xl flex items-center font-semibold justify-center">
+          <h2 className="text-xl flex items-center font-semibold justify-center max-md:text-base">
             <FaEnvelope className="text-blue-500 mr-2" /> Email
           </h2>
           <a
@@ -41,13 +23,13 @@ const Page = () => {
           </a>
         </div>
         <div className=" flex items-start flex-col bg-gray-300 rounded-md p-2">
-          <h2 className="text-xl flex items-center font-semibold justify-center">
+          <h2 className="text-xl flex items-center font-semibold justify-center max-md:text-base">
             <FaPhone className="text-blue-500 mr-2" /> Phone
           </h2>
           <p>+1 (123) 456-7890</p>
         </div>
         <div className=" flex items-start flex-col bg-gray-300 rounded-md p-2">
-          <h2 className="text-xl font-semibold mb-2 flex items-center justify-center">
+          <h2 className="text-xl font-semibold mb-2 flex items-center justify-center max-md:text-base">
             <FaMapMarkerAlt className="text-blue-500 mr-2" /> Mailing Address
           </h2>
           <address>
@@ -57,73 +39,15 @@ const Page = () => {
           </address>
         </div>
         </div>
-        <div className="my-4">
-          <h2 className="text-xl font-semibold mb-2 w-1/2 mx-auto max-md:w-full max-md:mx-2 text-blue-500">Contact Us</h2>
-          <form className="w-1/2 mx-auto max-md:w-full " onSubmit={onSubmit}>
-            <div className="mb-4">
-              <label
-                htmlFor="name"
-                className="block text-gray-700 font-semibold mb-2"
-              >
-                Your Name:
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                onFocus={(e)=>e.target.classList.add('shadow-custom')}
-                onBlur={(e)=>e.target.classList.remove('shadow-custom')}
-                className="border border-gray-300 rounded-md p-2 w-full outline-none"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="email"
-                className="block text-gray-700 font-semibold mb-2"
-              >
-                Email:
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                onFocus={(e)=>e.target.classList.add('shadow-custom')}
-                onBlur={(e)=>e.target.classList.remove('shadow-custom')}
-                className="border border-gray-300 rounded-md p-2 w-full outline-none"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                htmlFor="message"
-                className="block text-gray-700 font-semibold mb-2"
-              >
-                Message:
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                onFocus={(e)=>e.target.classList.add('shadow-custom')}
-                onBlur={(e)=>e.target.classList.remove('shadow-custom')}
-                className="border resize-none h-24 border-gray-300 rounded-md p-2 w-full outline-none"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 transition-colors duration-200 text-white font-semibold py-2 px-4 w-full rounded"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        <ContactForm/>
       </div>
     </div>
   );
 };
 
 export default Page;
+
+export const metadata = {
+  title: "Contact PriceTrackerHub - Your Ultimate Amazon and Flipkart Price Tracking Solution",
+  description: "Welcome to PriceTrackerHub, your one-stop destination for effortlessly monitoring and comparing prices of Amazon and Flipkart products. Never miss a deal again as our intuitive platform helps you stay updated on price drops, discounts, and special offers, ensuring you always get the best value for your money. Start tracking prices today and make smarter shopping decisions with PriceTrackerHub!",
+};
