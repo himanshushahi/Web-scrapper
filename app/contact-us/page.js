@@ -25,7 +25,7 @@ const Page = () => {
       <div className="wrapper max-md:px-2">
         <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
         <p className="mb-4">
-          Have a question or feedback for us? We'd love to hear from you! Feel
+          Have a question or feedback for us? We&apos;d love to hear from you! Feel
           free to get in touch using any of the following methods:
         </p>
         <div className="grid md:grid-cols-3 grid-cols-1 gap-2 ">
