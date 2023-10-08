@@ -13,8 +13,8 @@ const ProductSchema = new mongoose.Schema({
     provider:{
         type:String,
         enum:['Amazon','Flipkart']
-    }
-})
+    },
+},{timestamps:true})
 
 
 const ProductModel = mongoose.models.products || new mongoose.model('products',ProductSchema);

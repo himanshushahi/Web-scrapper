@@ -2,6 +2,7 @@ import Notify from "@/app/components/Notify";
 import ProductCard from "@/app/components/ProductCard";
 import Image from "next/image";
 import { FaArrowDown, FaArrowUp, FaPercent, FaRupeeSign } from "react-icons/fa";
+import dummyImage from '../../../public/dummy-image.jpg'
 
 async function getBlog(id) {
   try {
@@ -23,8 +24,8 @@ export default async function Page({ params }) {
         <div className="flex max-md:gap-4 max-md:flex-col relative wrapper">
           <div className="basis-1/2 h-[300px] max-md:flex justify-center">
             <Image
-              src={product.image}
-              alt={product.image}
+              src={product.image || dummyImage}
+              alt={product.image || dummyImage}
               width={500}
               height={500}
               className=" rounded-md object-contain h-full w-full"
