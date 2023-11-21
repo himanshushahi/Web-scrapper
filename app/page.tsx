@@ -3,7 +3,7 @@ import Pagination from "./components/Pagination";
 import ProductCard from "./components/ProductCard";
 import SearchComponent from "./components/SearchComponent";
 
-async function getProducts(page) {
+async function getProducts(page:string) {
   try {
     const response = await fetch(`${process.env.DOMAIN_URL}/api/get-products?page=${page}`,{next:{revalidate:300}});
 
@@ -17,7 +17,7 @@ async function getProducts(page) {
   }
 }
 
-export default async function Page({_,searchParams}) {
+export default async function Page({searchParams}) {
   const { products,count } = await getProducts(searchParams.page);
   return (
     <div>
