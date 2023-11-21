@@ -1,5 +1,5 @@
-import Notify from "@/app/components/Notify";
-import ProductCard from "@/app/components/ProductCard";
+import Notify from '../../components/Notify';
+import ProductCard from '../../components/ProductCard'
 import Image from "next/image";
 import { FaArrowDown, FaArrowUp, FaPercent, FaRupeeSign } from "react-icons/fa";
 import dummyImage from '../../../public/dummy-image.jpg'

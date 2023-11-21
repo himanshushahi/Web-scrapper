@@ -1,12 +1,12 @@
-import connectdb from "@/app/DB/connetdb";
-import ProductModel from "@/app/DB/model/ProductModel";
-import getData from "@/app/utils/utils";
-import { NextResponse } from "next/server";
+import connectdb from "../../../DB/connetdb";
+import ProductModel from '../../../DB/model/ProductModel'
+import getData from '../../../utils/utils'
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req, { params }) {
+export async function GET(req:NextRequest, { params }) {
   const id = params.id;
   try {
-    connectdb();
+   await connectdb();
     const product = await ProductModel.findById(id).select("_id url");
     await getData(product.url);
     const newProducts = await ProductModel.findById(id);

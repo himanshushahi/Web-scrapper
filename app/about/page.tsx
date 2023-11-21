@@ -1,4 +1,4 @@
-export default function Page(){
+ function Page(){
   return (
     <div className="flex justify-center my-10 md:my-20">
       <div className="wrapper max-md:px-2">
@@ -45,6 +45,7 @@ export default function Page(){
   );
 };
 
+export default Page
 
 
 export const metadata = {

@@ -1,13 +1,13 @@
+import React from 'react'
 import Link from 'next/link';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
-import logo from '../../public/logo.webp'
 import Image from 'next/image';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8 mt-4">
       <div className="wrapper mx-auto max-md:flex-col max-md:gap-4 flex justify-between items-center">
-        <div className="flex-1 text-xl flex gap-1 items-center"><Image width={500} height={500} src={logo} alt='logo' className='object-cover rounded-full w-10 h-10'/>  Product Scraper</div>
+        <div className="flex-1 text-xl flex gap-1 items-center"><Image width={500} height={500} src={'/logo.webp'} alt='logo' className='object-cover rounded-full w-10 h-10'/>  Product Scraper</div>
         <div className="flex-1 flex justify-center gap-4">
           <Link href="/" className='transition-colors duration-200 hover:text-gray-500'>Home</Link>
           <Link href="/#product-section" className='transition-colors duration-200 hover:text-gray-500'>Products</Link>

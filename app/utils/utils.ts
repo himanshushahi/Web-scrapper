@@ -44,7 +44,7 @@ const getData = async (url) => {
       } else {
         return { success: false, product: {} };
       }
-      connectdb();
+     await connectdb();
       const product = await ProductModel.findOne({ url }).select(
         "heighestPrice lowestPrice"
       );

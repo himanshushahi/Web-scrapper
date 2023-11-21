@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "Gmail", // e.g., 'Gmail'
@@ -8,7 +8,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function POST(req) {
+export async function POST(req:NextRequest) {
   const { name, email, message } = await req.json();
   if (!name || !email || !message) {
     return NextResponse.json({

@@ -1,5 +1,5 @@
-import connectdb from "@/app/DB/connetdb";
-import ProductModel from "@/app/DB/model/ProductModel";
+import connectdb from "../../DB/connetdb";
+import ProductModel from "../../DB/model/ProductModel";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -11,7 +11,7 @@ export async function POST(req) {
     );
   }
   try {
-    connectdb();
+   await connectdb();
     const product = await ProductModel.findById(productId);
 
     if (product) {
